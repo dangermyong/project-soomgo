@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='./stylesheets/estimates-style.css'>
+    </head>
+    <body>
+        <div class='header'>
+            <div class='item'>
+                <img src='./images/index_soomgo_logo.svg' class="logo" alt="logo" onclick="location.href='./'">
+            </div>
+            <div class='item header_text' id='sent_request'>
+                <a href="./requests/sent"> 보낸 요청 </a>
+            </div>
+            <div class='item header_text' id='chatting'>
+                <a href=""> 채팅 </a>
+                <a href=""> <input type='text' id="chatting_count" value='8' disabled> </a> 
+            </div>
+            <div class='item header_text' id='search_gosu'>
+                <a href=''> 고수 찾기 </a>
+            </div>
+            <div class='item' id='search_bar'>
+                <img src='./images/loupe.svg'>
+                <input type=text placeholder="this is placeholder">
+            </div>
+            <div class='blank'>
+            </div>
+            <div class='item' id='notification'>
+                <img src='./images/notification.svg'>
+            </div>
+            <div class='item header_text' id='user_info'>
+                <div class='flex_container'><img class="profile-img" src='./images/profile_picture.jpg'><span>강동호 고객님</span>
+                    <a class="account_toggleBtn">▼</a>  
+                </div>
+            </div>
+
+            
+            <div class="idbar">
+                <div class="greetings"> 안녕하세요, Choinakseong고객님</div>
+                <div class="list">
+                    <ul>
+                        <li>받은 견적</li>
+                        <li>마이페이지</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="join">고수로가입하기</div>
+                <div class="logout" onclick="location.href='/'">로그아웃</div>
+            </div>
+        </div>
+        <div class='grid' id='content_grid'>
+            <div id='background_image'>
+            </div>
+            <div id='banner'>
+                <div id='title'> 비즈니스 영어</div>
+                <div id='date'> 2020.06.22. </div>
+                <div>
+                    <input id='my_estimates' type='button' value='내 요청서 보기'>
+                </div>
+            </div>
+            <div class='estimate' id='estimate_1'>
+                <img class='gosu_image' src='./images/peng.jpg'>
+                <div class='gosu_content'>
+                    <div class='gosu_name'>
+                        강동호
+                    </div>
+                    <div class='gosu_score'>
+                        <img src='./images/star.png'>
+                        <img src='./images/star.png'>
+                        <img src='./images/star.png'>
+                        <img src='./images/star.png'>
+                        <img src='./images/star.png'>
+                        5.0 (1)개
+                    </div>
+                    <div class='gosu_price'>
+                        <img src='./images/south-korean-won.png'>
+                        1시간 당 500원
+                    </div>
+                </div>
+            </div>
+            <div class='estimate' id='estimate_2'>
+                <div class='gosu_image'>
+                    고수사진
+                </div>
+                <div class='gosu_content'>
+                    고수내용
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="./javascripts/index.js" defer></script>
+</html>
