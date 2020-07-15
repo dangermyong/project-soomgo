@@ -390,6 +390,13 @@ main .intro .image {
     margin-left: 50px;
 }
 
+main .intro .list i {
+    transition: all var(--animation-duration) ease;
+}
+
+main .intro .list i:hover {
+    transform: translateY(-10px); 
+}
 
 /* downloadapp */
 
