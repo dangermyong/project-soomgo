@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고수찾기</title>
+  <link rel="icon" type="images/png" href="/images/logo.png" />
+  <link rel="stylesheet" href="/stylesheets/profile.css" />
+</head>
+<body>
+  <section>
+    <h1>고수 프로필</h1>
+    <div class="container">
+      <div class="profileHeader">
+        <div class="picture"><img src=<%= data.image %> alt=""></div>
+        <div class="profileText">
+          <p class="name"><%= data.name %></p>
+          <p class="subject"><%= data.subject %></p><br>
+          <p class="rating"><%= data.rating %> / 5.0</p>
+        </div>
+      </div>
+      <p class=smalltitle>한줄 소개</p>
+      <p class="commnet"><%= data.introduction %></p>
+      <p class=smalltitle>추가 정보</p>
+      <p class="content">E-mail : <%= data.email %></p>
+      <p class="content">주소 : <%= data.address %></p>
+      <p class="content">채택수 : <%= data.hiredNumber %></p>
+      <p class="content">경력 : <%= data.careerYear %></p>
+      <p class="content">연락가능시간 : <%= data.contactTime %></p>
+    </div>
+  </section>
+</body>
+</html>

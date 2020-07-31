@@ -31,5 +31,4 @@ router.get('/sign-up/user', function(req, res, next){
   res.render('user-signup.ejs')
 })
 
-
 module.exports = router;
