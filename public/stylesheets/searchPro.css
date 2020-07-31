@@ -64,12 +64,12 @@ h1 {
 }
 
 .gosulist {
-  display: flex;
   margin-bottom: 10px;
   
 }
 
 .gosulist a{
+  display: flex;
   text-decoration: none;
   color: black;
 }
