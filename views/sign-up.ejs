@@ -13,23 +13,12 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
     <link rel="stylesheet" href="/stylesheets/sign-up.css" />
   </head>
 
   <body>
-    <nav id="navbar">
-      <div class="navbar__logo">
-        <a href="#"><img src="images/soomgo_logo.PNG" alt="" /></a>
-      </div>
-      <div class="navbar__menu">
-        <ul class="navbar__menu">
-          <li class="navbar__menu__item">고수가입</li>
-          <li class="navbar__menu__item">회원가입</li>
-          <li class="navbar__menu__item">고수 찾기</li>
-          <li class="navbar__menu__item">로그인</li>
-        </ul>
-      </div>
-    </nav>
+    <%- include('partials/navbar'); -%>
     <div class="row">
       <h1>숨고 무료 가입하기</h1>
     </div>
@@ -41,7 +30,7 @@
       </div>
       <div class="or">or</div>
       <div class="user__join both__join">
-        <!-- <img src="/image/coffee.jpg" alt="" /> -->
+        <!-- <img src="/images/coffee.jpg" alt="" /> -->
         <h2>도움이 필요한 일이 있어요</h2>
         <p>어떤 일이든 그에 꼭 맞는 숨은 고수를 소개 받으세요.</p>
         <a href="/sign-up/user" class="user__join__Btn">가입하고 서비스 요청하기</a>
@@ -180,6 +169,6 @@
         </div>
       </div>
     </nav>
-    <script src="index.js"></script>
+    <script src="/javascripts/signUp.js"></script>
   </body>
 </html>
