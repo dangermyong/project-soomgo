@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>고수찾기</title>
+  <script src="https://kit.fontawesome.com/fc26219ee3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/navbar.css" />
   <link rel="stylesheet" href="/stylesheets/searchPro.css" />
   <link rel="icon" type="images/png" href="/images/logo.png" />
@@ -12,6 +13,14 @@
   <%- include('partials/navbar'); -%>
   <h1>고수찾기</h1>
   <div class="container">
+    <div class="linkbox">
+      <a href="/">숨고</a>
+      <a href="/search/pro">>지역,카테고리</a>
+    </div>
+    <form>
+      <i class="fas fa-search"></i>
+      <input type="search" placeholder="고수, 지역, 서비스를 검색해보세요" name="search" id="searchPro">
+    </form>
     <div class="button">
       <a href="#">건대 영어 회화</a>
       <a href="#">강동 헬스 PT</a>
