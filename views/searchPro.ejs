@@ -11,7 +11,7 @@
 </head>
 <body>
   <%- include('partials/navbar'); -%>
-  <h1>고수찾기</h1>
+  <h1><a href="/search/pro">고수찾기</a></h1>
   <div class="container">
     <div class="linkbox">
       <a href="/">숨고</a>
@@ -22,9 +22,9 @@
       <input type="search" placeholder="고수, 지역, 서비스를 검색해보세요" name="search" id="searchPro">
     </form>
     <div class="button">
-      <a href="/search/pro?search=회계">회계</a>
-      <a href="/search/pro?search=세무">세무</a>
-      <a href="/search/pro?search=Java">Java</a>
+      <a href="/search/pro?search=부천+회계">부천 회계</a>
+      <a href="/search/pro?search=시흥+세무">시흥 세무</a>
+      <a href="/search/pro?search=서울+Java">서울 Java</a>
     </div>
     <div><%= data.length %> 명의 고수</div><br>
     <% for(let gosu of data) { %>
