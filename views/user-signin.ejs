@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User sign up</title>
     <link rel="icon" type="images/png" href="/images/logo.png" />
-    <link rel="stylesheet" href="/stylesheets/user-signup.css" />
+    <link rel="stylesheet" href="/stylesheets/user-signin.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/fc26219ee3.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="signup-form">
+    <div class="signin-form">
       <h1>숨고에 오신 것을 환영합니다</h1>
       <form action="">
         <p class="title">이름</p>
@@ -37,8 +37,8 @@
           숨고의 <a href="#">이용약관</a> 및 <a href="#">개인정보취급방침</a> 에
           동의합니다
         </p>
-        <button class="signup-btn new-btn">회원가입</button>
-        <button class="signup-btn facebook-btn">페이스북으로 가입하기</button>
+        <button class="signin-btn new-btn">회원가입</button>
+        <button class="signin-btn facebook-btn">페이스북으로 가입하기</button>
         <p class="small small_center">
           유저의 허락없이 게시물을 올리지 않습니다
         </p>
@@ -46,7 +46,7 @@
     </div>
 
     <script>
-      var fields = document.querySelectorAll(".input-box");
+      const fields = document.querySelectorAll(".input-box");
       
       document.querySelector(".show-password").addEventListener("click", function () {
           if (this.classList[2] == "fa-eye-slash") {

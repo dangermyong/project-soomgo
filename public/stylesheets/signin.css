@@ -54,7 +54,7 @@
   }
   
   .joinblock a,
-  .gosu_signup a {
+  .gosu_signin a {
     display: block;
     padding: 10px;
     width: 100%;
@@ -85,12 +85,12 @@
     justify-content: center;
     /* background-color: aqua; */
   }
-  .gosu_signup {
+  .gosu_signin {
     width: 480px;
     padding: 20px;
     background-color: beige;
   }
-  .gosu_signup p {
+  .gosu_signin p {
     font-size: 30px;
   }
   

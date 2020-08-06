@@ -12,12 +12,9 @@ router.get('/pro', async (req, res, next) => {
     searchQuery = `SELECT * FROM GOSU_TB WHERE CONCAT(subject, address) REGEXP "${searchOptions}"`;
   } else {
     searchQuery = `SELECT * FROM GOSU_TB WHERE CONCAT(subject, address) REGEXP "${searchOptions}"`;
-
   }
-  console.log(searchQuery);
   try{
     const connection = await pool.getConnection();
-    
     const [results] = await connection.query(searchQuery);
     connection.release();
     res.render('searchPro', {data : results});
