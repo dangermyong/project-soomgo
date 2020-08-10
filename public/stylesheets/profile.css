@@ -69,6 +69,16 @@ section {
   font-size: 20px;
 }
 
+.gosuInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+
+.basicInfo .addedInfo {
+  width: 50%;
+  text-align: left;
+}
 .smalltitle {
   margin-top: 15px;
   margin-bottom: 10px;

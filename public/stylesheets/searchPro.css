@@ -100,6 +100,8 @@ h1 {
 
 .picture img {
   border-radius: 10px;
+  margin: 10px 0;
+
 }
 
 .profile {
@@ -113,4 +115,8 @@ h1 {
 .name {
   font-size: 20px;
   font-weight: 700;
+}
+
+.review {
+  font-size: 14px;
 }

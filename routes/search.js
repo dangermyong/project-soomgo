@@ -16,6 +16,13 @@ router.get('/pro', async (req, res, next) => {
   try{
     const connection = await pool.getConnection();
     const [results] = await connection.query(searchQuery);
+    for (result of results) {
+      console.log(result.id);
+      const [review] = await connection.query(`SELECT * FROM REVIEW_TB WHERE gosu_id = ${result.id}`);
+      result.review_name = review[0].user_name;
+      result.review_comment = review[0].comment;
+      console.log(result);
+    }
     connection.release();
     res.render('searchPro', {data : results});
   } catch (err) {
