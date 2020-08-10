@@ -67,6 +67,7 @@ section {
 }
 .name {
   font-size: 20px;
+  font-weight: 600;
 }
 
 .gosuInfo {
@@ -88,4 +89,5 @@ section {
 
 .content {
   padding: 5px;
+  font-size: 16px;
 }
