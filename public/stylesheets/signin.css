@@ -1,0 +1,238 @@
+  
+  /* freejoin */
+  .row {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    justify-content: center;
+    grid-template-columns: 3fr 1fr 3fr;
+  }
+  
+  .both__join {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 480px;
+  }
+  .joinblock {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+  
+  .pro__join {
+    color: white;
+    background-image: url("/images/coffee.jpg");
+    background-color: transparent;
+    background-size: cover;
+    opacity: 1;
+  }
+  
+  .or {
+    padding: 80px 70px;
+  }
+  
+  .pro__join__Btn:hover {
+    background-color: var(--soomgo-light);
+  }
+  
+  .user__join__Btn:hover {
+    background-color: var(--soomgo-light);
+  }
+  
+  .joinblock h2 {
+    margin-top: 10px;
+  }
+  
+  .joinblock p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .joinblock a,
+  .gosu_signin a {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--soomgo-dark);
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .row__login {
+    display: flex;
+    margin-bottom: 100px;
+  }
+  
+  .row__login p {
+    margin-right: 10px;
+  }
+  
+  .row__login a {
+    text-decoration: none;
+    color: var(--blue);
+  }
+  /* slider row */
+  .gosu_container {
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+  .gosu_signin {
+    width: 480px;
+    padding: 20px;
+    background-color: beige;
+  }
+  .gosu_signin p {
+    font-size: 30px;
+  }
+  
+  #small_Btn {
+    display: block;
+    width: 40%;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+  
+  .gosu_slider {
+    margin-left: 80px;
+    width: 400px;
+    background-color: beige;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slider_controller {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+    font-size: 30px;
+  }
+  
+  .dot {
+    display: flex;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .slider_content {
+    display: flex;
+    width: 400px;
+    padding: 10px;
+  }
+  .slider_content p {
+    width: 400px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  
+  /* footer */
+  .line {
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer {
+    /* display: block; */
+    margin: 0 auto;
+    max-width: 970px;
+    padding-top: 20px;
+  }
+  
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer .phone {
+    color: var(--soomgo-dark);
+    font-size: 20px;
+    padding-bottom: 3px;
+    font-weight: 500;
+  }
+  
+  .footer .operatingtime {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 20px;
+  }
+  
+  .socialmedia a {
+    color: white;
+    background-color: var(--soomgo-dark);
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin-right: 10px;
+  }
+  
+  .socialmedia .fab {
+    margin-right: 10px;
+  }
+  
+  .content-list {
+    display: flex;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .small__text__title {
+    color: var(--gray-dark);
+    font-weight: 600;
+  }
+  .small__text__content {
+    display: block;
+    color: var(--gray-text);
+  }
+  
+  .content {
+    margin-left: 20px;
+    width: 90px;
+  }
+  
+  .footer__container__bottom {
+    margin-top: 10px;
+  }
+  .term__list {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray-dark);
+    margin-right: 20px auto;
+  }
+  
+  .term__description {
+    margin-top: 10px;
+  }
+  .term__description p {
+    font-size: 12px;
+    color: var(--gray-text);
+  }
+  
+  .space {
+    margin-bottom: 10px;
+  }
+  
+  .footer__leftbox__bottom {
+    width: 700px;
+  }
+  
+  .footer__rightbox__bottom {
+    display: box;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 35px;
+    margin: auto;
+    color: #5a5a5a;
+  }
+  
+  .footer__rightbox__bottom i {
+    margin-right: 5px;
+  }
+  
