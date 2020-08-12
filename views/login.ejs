@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User sign up</title>
+    <link rel="icon" type="images/png" href="/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/fc26219ee3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar'); -%>
+    <div class="login-form">
+      <h1>숨고에 오신 것을 환영합니다</h1>
+      <form action="/login" method="POST">
+        <label class="title">이메일</label>
+        <input
+          type="email"
+          class="input-box"
+          placeholder="이메일을 입력하세요"
+          name="email"
+        />
+        <label class="title">비밀번호</label>
+        <div class="password__input">
+          <input
+            type="password"
+            class="input-box"
+            placeholder="영문자와 숫자를 포함하여 8자 이상"
+            name="password"
+          />
+        </div>
+        <a href="/" class="small findPassword"> 비밀번호 찾기 </a>
+        <button type="submit" class="login-btn new-btn">로그인</button>
+        <button class="login-btn facebook-btn">페이스북으로 로그인</button>
+      </form>
+      <a href="/signin" class="noId">계정이 없으신가요?</a>
+    </div>
+    <%- include('partials/footer'); -%>
+    </body>
+</html>
