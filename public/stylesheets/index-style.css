@@ -6,9 +6,6 @@
     --red-color: #ff0000;
     --grey-dark-color: #909090;
     --grey-light-color:#e0e0e0;
-    --orange-color: rgb(255, 123, 0);
-    --orange-light-color : rgb(255, 150, 51);
-    --orange-pale-color : palegoldenrod;
     /* Size */
     --padding: 12px;
     --avatar-size: 40px;
@@ -31,7 +28,6 @@
 
 
 body {
-    font-family: 'Black Han Sans', sans-serif;
     font-family: 'Noto Sans KR', sans-serif;
     widows: 100%;
     height: 100%;
@@ -74,7 +70,6 @@ header .icons a {
     color : rgb(255, 123, 0);
     font-size :50px ;
     margin-left: 30px;
-    font-family : 'Black Han Sans', sans-serif;
 }
 
 /* menu */
@@ -306,12 +301,11 @@ main .intro .summary {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
 }
 
 main .intro .summary .catchphrase {
-    font-size: 50px;
-    font-family : 'Black Han Sans', sans-serif;
+    font-size: 40px;
+    text-align: left;
 }
 
 main .intro .summary .search-container {
@@ -322,7 +316,7 @@ main .intro .summary .search-container {
     text-decoration: none;
     width: 330px;
     height: 50px;
-    border : 1.5px solid var(--orange-color);
+    border : 1.5px solid var(--soomgo-light);
     border-radius: 5px;
     cursor: none;
     
@@ -383,7 +377,7 @@ main .intro .summary .list ul li i{
     display: flex;
     flex-direction: column;
     font-size: 30px;
-    color: var(--orange-light-color)
+    color: var(--soomgo-dark)
 }
 
 main .intro .image {
@@ -436,7 +430,7 @@ main .downloadapp .google{
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    background-color: var(--orange-color);
+    background-color: var(--soomgo-dark);
     font-size: 30px;
     margin-right: 20px;
     padding: 10px;
@@ -451,7 +445,7 @@ main .downloadapp .apple{
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    background-color: var(--orange-color);
+    background-color: var(--soomgo-dark);
     font-size: 30px;
     margin-right: 20px;
     padding: 10px;

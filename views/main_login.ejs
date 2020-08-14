@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숨고 가입하기 - 숨고, 숨은고수</title>
+    <script
+      src="https://kit.fontawesome.com/fc26219ee3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="images/png" href="/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/navbar_login.css" />
+    <link rel="stylesheet" href="/stylesheets/main_login.css" />
+  </head>
+
+  <body>
+    <%- include('partials/navbar'); -%>
+    <div class="row">
+      <h1>숨고 무료 가입하기</h1>
+    </div>
+    <div class="joinblock">
+      <div class="pro__join both__join">
+        <h2>더 많은 고객을 만나고 싶어요</h2>
+        <p>고수의 도움을 필요로 하는 수 많은 고객을 만나보세요.</p>
+        <a href="/signin" class="pro__join__Btn">고수로 가입하기</a>
+      </div>
+      <div class="or">or</div>
+      <div class="user__join both__join">
+        <!-- <img src="/images/coffee.jpg" alt="" /> -->
+        <h2>도움이 필요한 일이 있어요</h2>
+        <p>어떤 일이든 그에 꼭 맞는 숨은 고수를 소개 받으세요.</p>
+        <a href="/signin/user" class="user__join__Btn">가입하고 서비스 요청하기</a>
+      </div>
+    </div>
+    <div class="row row__login">
+      <p>이미 계정이 있으신가요?</p>
+      <a href="#">로그인</a>
+    </div>
+    <div class="gosu_container">
+      <div class="gosu_signin">
+        <p><strong>더 많은 고객을 만날 기회!</strong></p>
+        <p>가입 직후 <strong>내 조건에 맞는 요청서</strong>를</p>
+        <p>무료로 받아보고 만나고 싶은</p>
+        <p>고객과 연락해보세요.</p>
+        <span class="space"></span>
+        <a href="#" class="pro__join__Btn" id="small_Btn">고수로 가입하기</a>
+      </div>
+      <div class="gosu_slider">
+        <div class="slider_controller">
+          <div class="dot">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </div>
+          <div class="slider_arrow">
+            <i class="fas fa-chevron-left" id="prevBtn"></i>
+            <i class="fas fa-chevron-right" id="nextBtn"></i>
+          </div>
+        </div>
+        <div class="slider_content">
+          <div class="content_1">
+            <img src="images/receive-request.png" alt="">
+            <p>고객의 요청서가 도착해요</p>
+          </div>
+          <div class="content_1">
+            <img src="images/send-quote.png" alt="">
+            <p>고수님의 견적을 발송하세요</p>
+          </div>
+          <div class="content_1">
+            <img src="images/contact-user.png" alt="">
+            <p>고객과 연락하세요</p>
+          </div>
+          <div class="content_1">
+            <img src="images/handshake.png" alt="">
+            <p>거래가 완료되었어요</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <%- include('partials/footer'); -%>
+    <script src="/javascripts/signin.js"></script>
+  </body>
+</html>

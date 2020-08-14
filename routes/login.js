@@ -1,8 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const crypto = require('crypto');
+const jwt = require("jsonwebtoken");
 
 const pool = require('../utils/mysql.js');
+
+if (typeof localStorage === "undefined" || localStorage === null) {
+  const LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
 
 router.get('/', (req, res, next) => {
   res.render('login.ejs');
@@ -26,22 +32,15 @@ router.post('/', async (req, res) => {
       return res.json({ status: 401, msg: "일치하지 않는 비밀번호 입니다."})
     }
     connection.release();
-    res.json({ status: 200, msg: "로그인 성공"});
+    const payload = { id: user.id };
+    const token = await jwt.sign(payload, process.env.JWT_SECRET);
+    localStorage.setItem('token', JSON.stringify(token))
+    // res.json({ status : 201, token: token});
+    res.redirect('/requests/sent')
   } catch (error) {
       console.log(error);
       res.json({ status:500, msg: "에러가 났어요!"});
   }
-  
-  // const saltByte = await crypto.randomBytes(64);
-  // const salt = saltByte.toString('base64');
-  // const hashedPwdByte = crypto.pbkdf2Sync(password, salt, 100000, 64, 'SHA512');
-  // const hashedPassword = hashedPwdByte.toString('base64');
-
-  // const connection = await pool.getConnection();
-  // await connection.query('INSERT INTO USER_TB(name, email, hashedPassword, salt) VALUES(?, ?, ?, ?)', [name, email, hashedPassword, salt]);
-  // connection.release();
-  // res.json({ status : 201, msg : 'data added!'});
-
 })
 
 module.exports = router;

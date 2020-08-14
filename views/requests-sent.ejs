@@ -1,231 +1,88 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-
-        <link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/request-style.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/reset.css">
-        <script src="https://kit.fontawesome.com/fbaf558954.js" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-        <div class="app-advertisement">
-            <div class="advertisement-wrapper">
-                <img src="/images/icon-app-launcher.svg">
-                <p class="title">더 편리한 숨고 앱 이용하기</p>
-                <a href="../app-download" class="app-download">앱으로 보기</a>
-                <span class="btn close-button">
-                    <img src="http://localhost:3000/images/icon-banner-close.svg" alt="배너닫기" onclick="closeAd()">
-                </span>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/navbar_login.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/request-style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+  <script src="https://kit.fontawesome.com/fbaf558954.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <%- include('partials/navbar_login'); -%>
+  <section class="section-1">
+    <div class="request-list">
+      <h1>보낸 요청</h1>
+      <div class="request-wrapper">
+        <div class="request-container">
+          <% for(let request of data) { %>
+          <div class="request-box">
+            <div class="request-box-title">
+              <h3><%= request.title %></h3>
+              <p class="date">
+                <h2><%= request.requestDate.toISOString().split('T')[0] %></h2>
             </div>
+            <div class="request-box-contents">
+              <h5>
+              <%= request.isExpired ? "마감" : "진행중" %>
+              </h5>
+              <p>
+                <%= request.isExpired ? `이 요청서는 ${request.expiredDate.toISOString().split('T')[0]}에 종료되었습니다.` : `이 요청서는 ${request.expiredDate.toISOString().split('T')[0]} 에 종료됩니다.` %>
+              </p>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="location.href='../estimates';">
+              3개의 견적서 보기
+            </button>
+          </div>
+          <% } %>
         </div>
-        <div class="headline">
-            <img src="https://static.cdn.soomgo.com/static/img/home/index_soomgo_logo.svg" alt="숨고">
-            <div class="left-nav">
-                <div class="left-container">
-                    <li class="left-1">보낸요청</li>
-                    <li class="left-2">채팅 <i id="chat-badge">10</i></li>
-                    <li class="left-3">고수 찾기</li>
-                </div>
-            </div>
-            <div class="search-box">
-                <span class="search-icon"><i class="fas fa-search"></i></span>
-                <input type="search" class="search-service" placeholder="서비스를 검색해보세요">
-            </div>
-            <div class="right-nav">
-                <div class="right-nav-container">
-                    <div class="bell-icon">
-                        <i class="far fa-bell"></i>
-                        <i id="bell-badge"></i>
-                    </div>
-                    <div class="profile-icon"><i class="far fa-user-circle"></i></div>
-                    <div class="user-name">이동명 고객님 <i class="fas fa-caret-down"></i></div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-2">
+    <div class="recommendation-service">
+      <h1>추천서비스</h1>
+      <div class="recommendation-wrapper">
+        <div class="recommendation-container">
+          <div class="recommendation-box">
+            <img src="http://localhost:3000/images/dance-sports.jpg" class="card-img">
+            <button type="button" class="btn btn-tertiary">
+                댄스스포츠
+            </button>
+          </div>
+          <div class="recommendation-box">
+            <img src="http://localhost:3000/images/gayagum.jpg" class="card-img">
+            <button type="button" class="btn btn-tertiary">
+                가야금
+            </button>
+          </div>
+          <div class="recommendation-box">
+            <img src="http://localhost:3000/images/vocal.png" class="card-img">
+            <button type="button" class="btn btn-tertiary">
+                보컬
+            </button>
+          </div>
+          <div class="recommendation-box">
+            <img src="http://localhost:3000/images/violin.png" class="card-img">
+            <button type="button" class="btn btn-tertiary">
+                바이올린
+            </button>
+          </div>
+          <div class="recommendation-box">
+            <img src="http://localhost:3000/images/ukulele.png" class="card-img">
+            <button type="button" class="btn btn-tertiary">
+                우쿨렐레
+            </button>
+          </div>
+          <div class="recommendation-box">
+            <img src="http://localhost:3000/images/piano.jpg" class="card-img">
+            <button type="button" class="btn btn-tertiary">
+                피아노/키보드
+            </button>
+          </div>
         </div>
-        <section class="section-1">
-            <div class="request-list">
-                <h1>보낸 요청</h1>
-                <div class="request-wrapper">
-                    <div class="request-container">
-                        <div class="request-box">
-                            <div class="request-box-title">
-                                <h3>가구/목공예 레슨</h3>
-                                <p class="date">2020.05.31</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.06.02에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="location.href='../estimates';">
-                                3개의 견적서 보기
-                            </button>
-                        </div>
-
-                        <div class="request-box">    
-                            <div class="request-box-title">
-                                <h3>가정이사 (투룸 이상)</h3>
-                                <p class="date">2020.05.29</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.05.31에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                4개의 견적서 보기
-                            </button>
-                        </div>
-                        
-                        <div class="request-box">
-                            <div class="request-box-title">
-                                <h3>원룸/소형 이사</h3>
-                                <p class="date">2020.05.27</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.05.29에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                1개의 견적서 보기
-                            </button>
-                        </div>
-                        
-                        <div class="request-box">
-                            <div class="request-box-title">
-                                <h3>국내 이사</h3>
-                                <p class="date">2020.05.26</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.05.27에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                2개의 견적서 보기
-                            </button>
-                        </div>
-
-                        <div class="request-box">
-                            <div class="request-box-title">
-                                <h3>영어 과외</h3>
-                                <p class="date">2020.08.31</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.09.02에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                6개의 견적서 보기
-                            </button>
-                        </div>
-
-                        <div class="request-box">
-                            <div class="request-box-title">
-                                <h3>테니스 레슨</h3>
-                                <p class="date">2020.08.31</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.09.02에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                2개의 견적서 보기
-                            </button>
-                        </div>
-
-                        <div class="request-box more">
-                            <div class="request-box-title">
-                                <h3>국내 이사</h3>
-                                <p class="date">2020.05.26</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.05.27에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                2개의 견적서 보기
-                            </button>
-                        </div>
-
-                        <div class="request-box more">
-                            <div class="request-box-title">
-                                <h3>일본어(일어) 과외</h3>
-                                <p class="date">2020.07.08</h2>
-                            </div>
-                            <div class="request-box-contents">
-                                <h5>요청서가 마감되었습니다.</h5>
-                                <p>이 요청서는 2020.07.10에 종료되었습니다.</p>
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                6개의 견적서 보기
-                            </button>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="view-more">
-                    <button type="button" class="btn btn-secondary" onclick="viewMore()">더보기</button>
-                </div>
-            </div>
-        </section>
-        <section class="section-2">
-            <div class="recommendation-service">
-                <h1>추천서비스</h1>
-                <div class="recommendation-wrapper">
-                    <div class="recommendation-container">
-                        <div class="recommendation-box">
-                            <img src="http://localhost:3000/images/dance-sports.jpg" class="card-img">
-                            <button type="button" class="btn btn-tertiary">
-                                댄스스포츠
-                            </button>
-                        </div>
-
-                        <div class="recommendation-box">
-                            <img src="http://localhost:3000/images/gayagum.jpg" class="card-img">
-                            <button type="button" class="btn btn-tertiary">
-                                가야금
-                            </button>
-                        </div>
-
-                        <div class="recommendation-box">
-                            <img src="http://localhost:3000/images/vocal.png" class="card-img">
-                            <button type="button" class="btn btn-tertiary">
-                                보컬
-                            </button>
-                        </div>
-
-                        <div class="recommendation-box">
-                            <img src="http://localhost:3000/images/violin.png" class="card-img">
-                            <button type="button" class="btn btn-tertiary">
-                                바이올린
-                            </button>
-                        </div>
-
-                        <div class="recommendation-box">
-                            <img src="http://localhost:3000/images/ukulele.png" class="card-img">
-                            <button type="button" class="btn btn-tertiary">
-                                우쿨렐레
-                            </button>
-                        </div>
-
-                        <div class="recommendation-box">
-                            <img src="http://localhost:3000/images/piano.jpg" class="card-img">
-                            <button type="button" class="btn btn-tertiary">
-                                피아노/키보드
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </body>
-
-    <script src="http://localhost:3000/javascripts/request.js"></script>
-    <script>history.scrollRestoration = "manual"</script>
-    <script>
-        fetch('http://localhost:3000/users')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("bell-badge").innerHTML = data;
-        })
-    </script>
+      </div>
+    </div>
+  </section>
+<script src="javascripts/request.js"></script>
+<script>history.scrollRestoration = "manual"</script>
+</body>
 </html>

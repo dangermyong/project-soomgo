@@ -1,0 +1,25 @@
+<nav id="navbar">
+  <div class="navbar__logo">
+    <a href="/"><img src="/images/soomgo_logo.png" alt="" /></a>
+  </div>
+  <div class="navbar__menu">
+    <ul class="navbar__menu__ul">
+      <li class="navbar__menu__item"><a href="/requests/sent" class="receivedEstimates">받은견적</a></li>
+      <li class="navbar__menu__item"><a href="/" class="chatting">채팅</a></li>
+      <li class="navbar__menu__item"><a href="/search/pro" class="searchPro">고수찾기</a></li>
+      <li class="navbar__menu__item">
+        <form action="input" class="searchProForm">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="서비스를 검색해보세요">
+        </form>
+      </li>
+    </ul>
+    <div class="navbar__profile">
+      <i class="far fa-bell"></i>
+      <img src="/images/peng.jpg" width="30px" height="30px" alt="">
+      <span><%= user[0].name %> 고객님</span>
+      <i class="fas fa-caret-down"></i>
+    </div>
+  </div>
+</nav>
+

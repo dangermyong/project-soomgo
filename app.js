@@ -11,6 +11,7 @@ const searchRouter = require('./routes/search');
 const profileRouter = require('./routes/profile');
 const signinRouter = require('./routes/signin');
 const loginRouter = require('./routes/login');
+const requestsRouter = require('./routes/requests');
 // 라우터
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/search', searchRouter);
 app.use('/profile', profileRouter);
 app.use('/signin', signinRouter);
 app.use('/login', loginRouter);
+app.use('/requests', requestsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

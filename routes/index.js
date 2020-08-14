@@ -4,15 +4,7 @@ const router = express.Router();
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-  res.render('main.ejs');
-});
-
-router.get('/index', function(req, res, next) {
   res.render('index.ejs');
-});
-
-router.get('/requests/sent', function(req, res, next) {
-  res.render('requests-sent.ejs');
 });
 
 router.get('/app-download', function(req, res, next) {

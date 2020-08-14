@@ -4,70 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 500만명이 선택한 고수찾기 서비스 </title>
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
     <link rel="stylesheet" href="/stylesheets/index-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     <link rel="icon" type="images/png" href="/images/logo.png" />
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <!-- icons -->
-        <div class="icons">
-            <a href="">숨은달인</a>
-        </div>
-        <!-- menu -->
-        <div class="menu">
-            <ul></ul>
-            <a href="http://localhost:3000/requests/sent" class="require">보낸요청</a>
-            <li class="chatting">채팅
-            <a href=""><button>8</button></a>      
-            </li>
-            <a href="/search/pro" class="find">고수찾기</a>
-            <li class="search-container">
-                <input type="text" placeholder="서비스를 찾아보세요" autocomplete="off">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </li>
-            </ul>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <!-- QQQ1.다른방법?? 없을까? 그리드도 있을거고-->
-        <!-- QQQ2.검색창 눌렀을때 나오는거 어떻게 수정? -->
-        <!-- QQQ3.DIV로걸릴땐 DIV넣어서 간격벌리면되는데 LI는 안되는듯? -->
-        <!-- account -->
-        <div class="account">
-            <div class="alarm">
-                <i class="far fa-bell"></i>
-                <button>23</button>
-            </div>
-            <div class="picture">
-                <img src="./images/avatar.jpg" >
-            </div>
-            <div></div>
-            <div class="myname">
-            <span>최낙성님</span>
-            <a class="account_toggleBtn">
-                <i class="fas fa-caret-down"></i>
-            </a>            
-            </div>
-        </div>
-        <div class="idbar">
-            <div class="greetings"> 안녕하세요, Choinakseong고객님</div>
-            <div class="list">
-                <ul>
-                    <li>받은 견적</li>
-                    <li>마이페이지</li>
-                </ul>
-            </div>
-            <hr>
-            <div class="join">고수로가입하기</div>
-            <div class="logout" onclick="location.href='/'">로그아웃</div>
-        </div>
-    </header>
+    <%- include('partials/navbar'); -%>
     <!-- main -->
     <main>
         <!-- intro -->
@@ -75,7 +19,7 @@
             <!-- summary -->
         <div class="summary">
         <div class="catchphrase">
-            <span>딱 맞는 달인을 찾아드립니다!</span>
+            <span>딱! 맞는 고수를 <br>소개해드립니다</span>
         </div>
         <div class="search-container">
             <input type="text" placeholder="어떤 분야의 달인을 찾으시나요?" autocomplete="off">
@@ -193,6 +137,7 @@
             </div>
         </section>
     </main>
+
     <!-- footer -->
     <%- include('partials/footer'); -%>
 </body>
