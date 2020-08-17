@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>고수찾기</title>
   <script src="https://kit.fontawesome.com/fc26219ee3.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/stylesheets/navbar.css" />
   <link rel="stylesheet" href="/stylesheets/searchPro.css" />
   <link rel="icon" type="images/png" href="/images/logo.png" />
 </head>
 <body>
-  <%- include('partials/navbar'); -%>
+  <% if (user) { %>
+    <%- include('partials/navbar_login'); -%>
+  <% } else { %>
+    <%- include('partials/navbar'); -%>
+  <% } %>
   <h1><a href="/search/pro">고수찾기</a></h1>
   <div class="container">
     <div class="linkbox">

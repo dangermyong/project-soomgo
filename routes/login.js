@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const jwt = require("jsonwebtoken");
 
 const pool = require('../utils/mysql.js');
+const maxAge = 24 * 60 * 60;
 
 if (typeof localStorage === "undefined" || localStorage === null) {
   const LocalStorage = require('node-localstorage').LocalStorage;
@@ -34,8 +35,7 @@ router.post('/', async (req, res) => {
     connection.release();
     const payload = { id: user.id };
     const token = await jwt.sign(payload, process.env.JWT_SECRET);
-    localStorage.setItem('token', JSON.stringify(token))
-    // res.json({ status : 201, token: token});
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.redirect('/requests/sent')
   } catch (error) {
       console.log(error);

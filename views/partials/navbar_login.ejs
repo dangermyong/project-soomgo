@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/stylesheets/navbar_login.css" />
 <nav id="navbar">
   <div class="navbar__logo">
     <a href="/"><img src="/images/soomgo_logo.png" alt="" /></a>
@@ -16,10 +17,25 @@
     </ul>
     <div class="navbar__profile">
       <i class="far fa-bell"></i>
-      <img src="/images/peng.jpg" width="30px" height="30px" alt="">
-      <span><%= user[0].name %> 고객님</span>
-      <i class="fas fa-caret-down"></i>
+        <img class="openModal" src="/images/peng.jpg" width="30px" height="30px" alt="">
+        <span class="openModal"><%= user[0].name %> 고객님</span>
+      <i class="openModal fas fa-caret-down"></i>
+    </div>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">
+          <div>안녕하세요, 김용재님</div>
+          <div>평점 0 리뷰 0</div>
+          <div>프로필 관리</div>
+          <div>마이페이지</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <a href="/logout">Log out</a>
+      </div>
     </div>
   </div>
+  <div class="" id="overlay"></div>
+  <script src="/javascripts/navbar_login.js"></script>
 </nav>
 
