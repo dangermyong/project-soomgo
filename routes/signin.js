@@ -26,7 +26,7 @@ router.post('/user', async (req, res) => {
   const connection = await pool.getConnection();
   await connection.query('INSERT INTO USER_TB(name, email, hashedPassword, salt) VALUES(?, ?, ?, ?)', [name, email, hashedPassword, salt]);
   connection.release();
-  res.json({ status : 201, msg : 'data added!'});
+  res.redirect('/login')
 
 })
 

@@ -3,25 +3,17 @@ const router = express.Router();
 const crypto = require('crypto');
 const jwt = require("jsonwebtoken");
 const pool = require('../utils/mysql.js');
+const { requireAuth } = require('../utils/authMiddleware.js')
 require('dotenv').config();
 
-router.get('/sent', async (req, res, next) => {
+router.get('/sent', requireAuth, async (req, res, next) => {
   try{
-    const token = req.cookies.jwt;
-    let payload
-    try {
-      payload = jwt.verify(token, process.env.JWT_SECRET);
-      console.log(payload)
-    } catch (error) {
-      return res.json({ status: 401, msg: '너 권한 없음'});
-    } 
-    const userId = payload.id;
+    console.log(req.token.name)
     const connection = await pool.getConnection();
-    const [user] = await connection.query('SELECT * FROM USER_TB WHERE id = ?', [userId]);
-    const [results] = await connection.query('SELECT * FROM REQUEST_TB WHERE userId = ?', [userId]);
+    const [user] = await connection.query('SELECT * FROM USER_TB WHERE id = ?', [req.token.id]);
+    const [results] = await connection.query('SELECT * FROM REQUEST_TB WHERE userId = ?', [req.token.id]);
     connection.release();
-    console.log(user[0])
-    res.render('requests-sent', { user: user , data: results});
+    res.render('requests-sent', { userName: req.token.name , data: results});
   } catch (err) {
     console.log(err);
     res.json({ status : 500, msg : '에러가 났어요!'});

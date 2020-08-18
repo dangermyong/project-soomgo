@@ -8,7 +8,7 @@ router.get('/gosu/:gosuId', async (req, res, next) => {
     const connection = await pool.getConnection();
     const [results] = await connection.query('SELECT * FROM GOSU_TB WHERE id = ?', req.params.gosuId);
     connection.release();
-    res.render('profile', {data : results[0]});
+    res.render('profile', { data : results[0]});
     // res.json({ status : 200, arr: results2 });
   } catch (err) {
     console.log(err);

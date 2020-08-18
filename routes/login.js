@@ -33,9 +33,10 @@ router.post('/', async (req, res) => {
       return res.json({ status: 401, msg: "일치하지 않는 비밀번호 입니다."})
     }
     connection.release();
-    const payload = { id: user.id };
+    const payload = { id: user.id, name: user.name };
     const token = await jwt.sign(payload, process.env.JWT_SECRET);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    console.log(token)
     res.redirect('/requests/sent')
   } catch (error) {
       console.log(error);

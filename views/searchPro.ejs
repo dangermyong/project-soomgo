@@ -9,10 +9,10 @@
   <link rel="icon" type="images/png" href="/images/logo.png" />
 </head>
 <body>
-  <% if (user) { %>
-    <%- include('partials/navbar_login'); -%>
+  <% if (userName) { %>
+    <%- include('partials/navbar_login'); %>
   <% } else { %>
-    <%- include('partials/navbar'); -%>
+    <%- include('partials/navbar'); %>
   <% } %>
   <h1><a href="/search/pro">고수찾기</a></h1>
   <div class="container">
